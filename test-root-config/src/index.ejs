@@ -12,35 +12,34 @@
   <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
 
   <!-- Shared dependencies go into this import map -->
-   <!--
-       "@UJET/previous-calls": "//localhost:8500/UJET-previous-calls.js"
-  
-   -->
   <script type="injector-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@6.0.3/lib/es2015/esm/single-spa.min.js",
-        "react": "https://cdn.jsdelivr.net/npm/react@17/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17/umd/react-dom.production.min.js"
-       }
+        "react": "https://ga.jspm.io/npm:react@17.0.2/dev.index.js",
+        "react-dom": "https://ga.jspm.io/npm:react-dom@17.0.2/dev.index.js",
+        "single-spa-react": "https://ga.jspm.io/npm:single-spa-react@4.6.1/lib/esm/single-spa-react.js"
+      },
+      "scopes": {
+        "https://ga.jspm.io/": {
+          "object-assign": "https://ga.jspm.io/npm:object-assign@4.1.1/index.js",
+          "scheduler": "https://ga.jspm.io/npm:scheduler@0.20.2/dev.index.js",
+          "scheduler/tracing": "https://ga.jspm.io/npm:scheduler@0.20.2/dev.tracing.js"
+        }
+      }
     }
-  </script>
+   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@6.0.3/lib/es2015/esm/single-spa.min.js" as="module">
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="injector-importmap" src="/importmap.json"></script> -->
-
-  <!--
-       "@single-spa/welcome": "https://cdn.jsdelivr.net/npm/single-spa-welcome/dist/single-spa-welcome.min.js",
-  
-  -->
 
   <% if (isLocal) { %>
   <script type="injector-importmap">
     {
       "imports": {
         "@UJET/root-config": "//localhost:9000/UJET-root-config.js",
-        "@UJET/test-page": "//localhost:8080/UJET-test-page.js"
+        "@UJET/test-page": "//localhost:8080/UJET-test-page.js",
+        "@single-spa/welcome": "https://cdn.jsdelivr.net/npm/single-spa-welcome/dist/single-spa-welcome.min.js"
       }
     }
   </script>

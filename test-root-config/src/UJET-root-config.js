@@ -12,21 +12,13 @@ registerApplication({
 
 registerApplication({
   name: "@UJET/test-page",
-  app: () => import(
-    /* webpackIgnore: true */
-    "//localhost:8080/UJET-test-page.js"
-  ),
+  app: () =>
+    import(
+      /* webpackIgnore: true */
+      "//localhost:8080/UJET-test-page.js"
+    ),
   activeWhen: ["/test"],
-})
-
-// registerApplication({
-//   name: "@UJET/previous-calls",
-//   app: () => import(
-//     /* webpackIgnore: true */
-//     "//localhost:8500/UJET-previous-calls.js"
-//   ),
-//   activeWhen: ["/previous-calls"],
-// })
+});
 
 // registerApplication({
 //   name: "@UJET/navbar",
